@@ -1,0 +1,11 @@
+$primar-bgColor: rgb(37, 36, 36);
+$second-bgColor: rgb(71, 67, 67);
+$font-Color: rgba(75, 216, 56, 0.89);
+$text-color: white;
+$button-color: red;
+
+@mixin tablet-and-up() {
+  @media only screen and (min-width: 600px) {
+    @content;
+  }
+}

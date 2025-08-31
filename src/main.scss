@@ -1,0 +1,180 @@
+@import "color.scss";
+@import "font.scss";
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: $primar-bgColor;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 12px;
+
+  @include tablet-and-up() {
+    margin-top: 4rem;
+  }
+}
+
+.heading {
+  &__title {
+    color: $font-Color;
+    font-family: "Rubik Scribble", sans-serif;
+    margin-top: 2rem;
+    @include txt(normal, 4rem);
+  }
+}
+
+.joke {
+  background-color: $second-bgColor;
+  height: 16rem;
+  margin-top: 2rem;
+  padding: 2rem;
+
+  @include tablet-and-up() {
+    margin-top: 4rem;
+    width: 50%;
+  }
+
+  &__actuality--text {
+    color: $text-color;
+    text-align: left;
+    font-family: "Inter", sans-serif;
+    @include txt(normal, 1.2rem);
+  }
+
+  .joke__actuality--handling {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2.5rem;
+    gap: 1rem;
+
+    @include tablet-and-up() {
+      flex-direction: row;
+      text-align: center;
+      justify-content: center;
+    }
+  }
+
+  .joke__handling--new-button {
+    text-decoration: none;
+    color: $second-bgColor;
+    border: 1px solid $font-Color;
+    background-color: $font-Color;
+    text-align: center;
+    padding: 1rem 4rem;
+    border-radius: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .joke__handling--new-button:hover {
+    background-color: darken($font-Color, 10);
+  }
+
+  .joke__handling--save-button {
+    text-decoration: none;
+    color: $font-Color;
+    border: 1px solid $font-Color;
+    border-radius: 5px;
+    padding: 1rem 3.7rem;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+    font-size: 1.2rem;
+
+    .joke__handling--save-icon {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  .joke__handling--save-button:hover {
+    background-color: $font-Color;
+    color: $second-bgColor;
+  }
+}
+
+.joke-save {
+  @include tablet-and-up() {
+    margin-top: 6rem;
+  }
+
+  &__heading {
+    color: $text-color;
+    font-family: "Rubik Scribble", sans-serif;
+    @include txt(normal, 1.4rem);
+    padding-top: 4rem;
+  }
+  &__list {
+    display: flex;
+    text-align: left;
+    color: $text-color;
+    font-family: "Inter", sans-serif;
+    @include txt(italic, 1.3rem);
+    padding-top: 1rem;
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+.joke-saves {
+  display: flex;
+  text-align: center;
+
+  &__text {
+    flex-direction: column;
+    color: $text-color;
+    font-family: "Inter", sans-serif;
+    background-color: $second-bgColor;
+    text-align: left;
+    padding: 1rem;
+    font-size: 1rem;
+    border-radius: 3px;
+    border: none;
+
+    @include tablet-and-up() {
+      padding: 4rem;
+    }
+  }
+
+  &__delete {
+    background-color: $second-bgColor;
+    display: flex;
+    text-align: center;
+    height: 100px;
+    border: none;
+    padding-top: 25px;
+    padding-right: 15px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: 0.2s all ease-in-out;
+
+    @include tablet-and-up() {
+      padding-top: 4rem;
+      padding-left: 2rem;
+      padding-right: 2rem;
+      padding-bottom: 6rem;
+    }
+  }
+
+  &__delete--icon {
+    background-color: $button-color;
+    color: $text-color;
+    padding: 10px;
+    width: 25px;
+    height: 25px;
+
+    &:hover {
+      background-color: darken($button-color, 10);
+    }
+  }
+}
