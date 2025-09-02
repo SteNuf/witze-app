@@ -6,3 +6,13 @@ const newJokeButtonElement = document.querySelector(
 );
 
 newJokeButtonElement.addEventListener("click", getJoke);
+
+const saveJokeButtonElement = document.querySelector(
+  ".joke__handling--save-button"
+);
+
+saveJokeButtonElement.addEventListener("click", saveJoke);
+
+function saveJoke() {
+  console.log("Test");
+}
