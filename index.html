@@ -21,7 +21,11 @@
           <div class="joke__actuality--handling">
             <button class="joke__new-button">Neuer Witz laden</button>
 
-            <button class="joke__save-button">
+            <button
+              id="hidden-button"
+              class="joke__save-button"
+              style="display: none"
+            >
               Witz speichern
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -46,9 +50,9 @@
         <div class="joke-save__heading">
           <h2 class="joke-save__heading--title">Gespeicherte Witze</h2>
         </div>
-        <div class="joke-save__list">
+        <div class="joke-save__list" id="hidden-joke">
           Noch keine Witze gespeichert.
-          <div class="joke-saves">
+          <div class="joke-saves" style="display: none">
             <div class="joke-saves__text">
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Doloribus, ratione!
