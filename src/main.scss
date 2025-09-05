@@ -61,34 +61,34 @@ body {
     }
   }
 
-  .joke__handling--new-button {
+  .joke__new-button {
     text-decoration: none;
     color: $second-bgColor;
     border: 1px solid $font-Color;
     background-color: $font-Color;
     text-align: center;
-    padding: 1rem 4rem;
+    padding: 1.2rem 2rem;
     border-radius: 5px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1.2rem;
     transition: all 0.2s ease-in-out;
   }
 
-  .joke__handling--new-button:hover {
+  .joke__new-button:hover {
     background-color: darken($font-Color, 10);
   }
 
-  .joke__handling--save-button {
+  .joke__save-button {
     text-decoration: none;
     color: $font-Color;
     border: 1px solid $font-Color;
     border-radius: 5px;
-    padding: 1rem 3.7rem;
+    padding: 1.2rem 2rem;
     font-family: Arial, Helvetica, sans-serif;
     display: flex;
     justify-content: center;
     text-align: center;
-    gap: 10px;
+    gap: 5px;
     font-size: 1.2rem;
     background-color: $second-bgColor;
 
