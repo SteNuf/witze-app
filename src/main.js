@@ -1,14 +1,18 @@
-import { getJoke } from "./fetch.js";
+import { getJoke, saveLocalStorageJoke, getLocalStorageJoke } from "./fetch.js";
 import "./main.scss";
 
 const newJokeButtonElement = document.querySelector(".joke__new-button");
+const saveJokeButtonElement = document.querySelector(".joke__save-button");
+const jokeSaveListElement = document.querySelector(".joke-save__list");
 
 newJokeButtonElement.addEventListener("click", getJoke);
+saveJokeButtonElement.addEventListener("click", saveLocalStorageJoke);
 
-const saveJokeButtonElement = document.querySelector(".joke__save-button");
+let joke = getLocalStorageJoke();
 
-saveJokeButtonElement.addEventListener("click", saveJoke);
+console.log(joke);
 
-function saveJoke() {
-  console.log("Test");
-}
+// const jokeSaved = document.createElement("div");
+// jokeSaved.classList.add("");
+const listOutput = document.querySelector(".joke-saves__text");
+listOutput.innerHTML = joke;
