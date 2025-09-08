@@ -84,3 +84,7 @@ function renderJoke(joke) {
 }
 
 saveListJokeArray.forEach(renderJoke);
+
+if (saveListJokeArray.length > 0 && placeHolderElement) {
+  placeHolderElement.remove();
+}
