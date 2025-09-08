@@ -13,15 +13,13 @@ async function getJokeAPI() {
   const jokeOutput = document.querySelector(".joke__actuality--text");
   jokeOutput.innerText = body[0].text;
 
-  console.log(jokeOutput.innerText);
-
   jokeSave = jokeOutput.innerText;
   console.log(jokeSave);
 }
 
 export function saveLocalStorageJoke() {
   localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(jokeSave));
-  console.log(localStorage.getItem(LOCAL_STORAGE_KEY));
+  //console.log(localStorage.getItem(LOCAL_STORAGE_KEY));
 }
 
 export function getLocalStorageJoke() {
