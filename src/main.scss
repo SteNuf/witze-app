@@ -83,12 +83,12 @@ body {
     color: $font-Color;
     border: 1px solid $font-Color;
     border-radius: 5px;
-    padding: 1.2rem 2rem;
+    padding: 1rem 2rem;
     font-family: Arial, Helvetica, sans-serif;
-    display: flex;
+    display: inline-flex;
     justify-content: center;
     text-align: center;
-    gap: 5px;
+    gap: 8px;
     font-size: 1.2rem;
     background-color: $second-bgColor;
 
@@ -113,58 +113,65 @@ body {
     color: $text-color;
     font-family: "Rubik Scribble", sans-serif;
     @include txt(normal, 1.4rem);
-    padding-top: 4rem;
+    padding-top: 5rem;
+    padding-bottom: 2rem;
   }
   &__list {
     display: flex;
     text-align: left;
+    justify-content: space-between;
     color: $text-color;
     font-family: "Inter", sans-serif;
     @include txt(italic, 1.3rem);
     padding-top: 1rem;
     flex-direction: column;
     gap: 1rem;
+    padding: 0.1rem;
+    width: 100%;
+    min-height: 80px;
   }
 }
 
 .joke-saves {
   display: flex;
   text-align: center;
+  width: 100%;
+  min-height: 80px;
+  box-sizing: border-box;
 
   &__text {
     flex-direction: column;
+    flex: 1;
     color: $text-color;
     font-family: "Inter", sans-serif;
     background-color: $second-bgColor;
     text-align: left;
-    padding: 1rem;
+    padding: 2rem;
+    padding-top: 3rem;
     font-size: 1rem;
     border-radius: 3px;
     border: none;
-
-    @include tablet-and-up() {
-      padding: 4rem;
-    }
+    word-wrap: break-word;
   }
 
   &__delete {
     background-color: $second-bgColor;
     display: flex;
     text-align: center;
-    height: 100px;
+    justify-content: center;
+    padding: 2rem;
+    padding-top: 2.4rem;
     border: none;
-    padding-top: 25px;
-    padding-right: 15px;
     border-radius: 3px;
     cursor: pointer;
     transition: 0.2s all ease-in-out;
 
-    @include tablet-and-up() {
-      padding-top: 4rem;
-      padding-left: 2rem;
-      padding-right: 2rem;
-      padding-bottom: 6rem;
-    }
+    // @include tablet-and-up() {
+    //   padding-top: 4rem;
+    //   padding-left: 2rem;
+    //   padding-right: 2rem;
+    //   padding-bottom: 6rem;
+    // }
   }
 
   &__delete--icon {
