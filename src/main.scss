@@ -38,7 +38,7 @@ body {
 
   @include tablet-and-up() {
     margin-top: 4rem;
-    width: 80%;
+    width: 50%;
   }
 
   &__actuality--text {
@@ -74,7 +74,7 @@ body {
     transition: all 0.2s ease-in-out;
 
     @include tablet-and-up() {
-      width: 50%;
+      width: 195px;
       padding: 1rem;
     }
   }
@@ -99,8 +99,12 @@ body {
     background-color: $second-bgColor;
 
     @include tablet-and-up() {
-      width: 50%;
+      width: 200px;
       padding: 1rem;
+    }
+
+    &--hidden {
+      display: none;
     }
 
     .joke__handling--save-icon {
@@ -109,7 +113,7 @@ body {
 
       @include tablet-and-up() {
         padding-top: 1px;
-        width: 3vh;
+        width: 2vh;
         height: 2vh;
       }
     }

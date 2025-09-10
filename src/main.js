@@ -20,7 +20,7 @@ const placeHolderElement = document.getElementById(
 //Witz laden
 newJokeButtonElement.addEventListener("click", async () => {
   currentJoke = await getJokeAPI();
-  hidden.style.display = "inline-block";
+  hidden.classList.remove("joke__save-button--hidden");
 });
 
 // Witz speichern
