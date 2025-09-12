@@ -7,7 +7,35 @@
 }
 
 body {
-  background-color: $primar-bgColor;
+  background-color: var(--primar-bgColor);
+}
+
+#theme-switch {
+  height: 50px;
+  width: 50px;
+  padding: 0;
+  border-radius: 10px;
+  background-color: var(--font-Color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 20px;
+  right: 20px;
+}
+#theme-switsch svg {
+  fill: var(--button-color);
+}
+
+#theme-switch svg:last-child {
+  display: none;
+}
+
+.darkmode #theme-switch svg:first-child {
+  display: none;
+}
+
+.darkmode #theme-switch svg:last-child {
+  display: block;
 }
 
 #app {
@@ -63,9 +91,9 @@ body {
 
   .joke__new-button {
     text-decoration: none;
-    color: $second-bgColor;
+    color: var(--second-bgColor);
     border: 1px solid $font-Color;
-    background-color: $font-Color;
+    background-color: var(--font-Color);
     text-align: center;
     padding: 1.2rem 2rem;
     border-radius: 5px;
@@ -85,7 +113,7 @@ body {
 
   .joke__save-button {
     text-decoration: none;
-    color: $font-Color;
+    color: var(--font-Color);
     border: 1px solid $font-Color;
     border-radius: 5px;
     padding: 1.2rem;
@@ -96,7 +124,7 @@ body {
     text-align: center;
     gap: 8px;
     font-size: 1.2rem;
-    background-color: $second-bgColor;
+    background-color: var(--second-bgColor);
 
     @include tablet-and-up() {
       width: 200px;
@@ -119,7 +147,7 @@ body {
     }
   }
 
-  .joke__handling--save-button:hover {
+  .joke__save-button:hover {
     background-color: $font-Color;
     color: $second-bgColor;
   }
@@ -131,7 +159,7 @@ body {
   }
 
   &__heading {
-    color: $text-color;
+    color: var(--text-color);
     font-family: "Rubik Scribble", sans-serif;
     @include txt(normal, 1.4rem);
     padding-top: 5rem;
@@ -141,7 +169,7 @@ body {
     display: flex;
     text-align: left;
     justify-content: space-between;
-    color: $text-color;
+    color: var(--text-color);
     font-family: "Inter", sans-serif;
     @include txt(italic, 1.3rem);
     padding-top: 1rem;
