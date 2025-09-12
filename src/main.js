@@ -25,11 +25,6 @@ newJokeButtonElement.addEventListener("click", async () => {
 
 // Witz speichern
 saveJokeButtonElement.addEventListener("click", () => {
-  if (!currentJoke) {
-    alert("Bitte erst einen Witz laden!");
-    return;
-  }
-
   if (saveListJokeArray.includes(currentJoke)) {
     alert("Dieser Witz ist schon gespeichert!");
     return;
