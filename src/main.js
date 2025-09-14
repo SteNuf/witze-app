@@ -12,6 +12,7 @@ const newJokeButtonElement = document.querySelector(".joke__new-button");
 const saveJokeButtonElement = document.querySelector(".joke__save-button");
 const jokeSaveListElement = document.querySelector(".joke-save__list");
 
+//Versteckter Button
 const hidden = document.getElementById("hidden-button");
 const placeHolderElement = document.getElementById(
   "joke-save__list--placeholder"
@@ -20,6 +21,8 @@ const placeHolderElement = document.getElementById(
 if (saveListJokeArray.length > 0 && placeHolderElement) {
   placeHolderElement.remove();
 }
+
+//Darkmode
 let darkmode = localStorage.getItem("darkmode");
 const themeSwitchElement = document.getElementById("theme-switch");
 
