@@ -11,15 +11,15 @@ export async function getJokeAPI() {
   //jokeSave = jokeOutput.innerText;
 }
 
-export function saveLocalStorageJoke(joke) {
+export function saveJokeToLocalStorage(joke) {
   if (!joke) return;
-  const jokes = getLocalStorageJoke();
+  const jokes = getJokesFromLocalStorage();
   jokes.push(joke);
   localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(jokes));
   //console.log(localStorage.getItem(LOCAL_STORAGE_KEY));
 }
 
-export function getLocalStorageJoke() {
+export function getJokesFromLocalStorage() {
   const data = localStorage.getItem("witze-app");
   if (!data) {
     return [];

@@ -1,12 +1,12 @@
 import {
   getJokeAPI,
-  saveLocalStorageJoke,
-  getLocalStorageJoke,
+  saveJokeToLocalStorage,
+  getJokesFromLocalStorage,
 } from "./fetch.js";
 import "./main.scss";
 
 let currentJoke = "";
-let saveListJokeArray = getLocalStorageJoke();
+let saveListJokeArray = getJokesFromLocalStorage();
 
 const newJokeButtonElement = document.querySelector(".joke__new-button");
 const saveJokeButtonElement = document.querySelector(".joke__save-button");
@@ -95,11 +95,11 @@ function renderJoke(joke) {
     </button> `;
 
   jokeListDiv
-    .querySelector(".joke-saves__delete")
+    .querySelector(".joke-saves__delete--icon")
     .addEventListener("click", () => {
       jokeListDiv.remove();
       saveListJokeArray = saveListJokeArray.filter((j) => j !== joke);
-      //saveLocalStorageJoke(saveListJokeArray);
+      //saveJokeToLocalStorage(saveListJokeArray);
       localStorage.setItem("witze-app", JSON.stringify(saveListJokeArray));
 
       if (saveListJokeArray.length === 0) {

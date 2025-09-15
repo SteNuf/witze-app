@@ -51,7 +51,7 @@ body {
 
 .heading {
   &__title {
-    color: $font-Color;
+    color: var(--font-Color);
     font-family: "Rubik Scribble", sans-serif;
     margin-top: 2rem;
     @include text(normal, 4rem);
@@ -91,9 +91,9 @@ body {
 
   .joke__new-button {
     text-decoration: none;
-    color: var(--second-bgColor);
+    color: $font-Color;
     border: 1px solid $font-Color;
-    background-color: var(--font-Color);
+    background-color: $second-bgColor;
     text-align: center;
     padding: 1.2rem 2rem;
     border-radius: 5px;
@@ -113,7 +113,7 @@ body {
 
   .joke__save-button {
     text-decoration: none;
-    color: var(--font-Color);
+    color: $font-Color;
     border: 1px solid $font-Color;
     border-radius: 5px;
     padding: 1.2rem;
@@ -124,7 +124,7 @@ body {
     text-align: center;
     gap: 8px;
     font-size: 1.2rem;
-    background-color: var(--second-bgColor);
+    background-color: $second-bgColor;
 
     @include tablet-and-up() {
       width: 200px;
@@ -167,7 +167,7 @@ body {
   }
   &__list {
     display: flex;
-    text-align: left;
+    text-align: center;
     justify-content: space-between;
     color: var(--text-color);
     font-family: "Inter", sans-serif;
@@ -184,7 +184,7 @@ body {
 .joke-saves {
   display: flex;
   text-align: center;
-  width: 100%;
+  max-width: 950px;
   min-height: 80px;
   box-sizing: border-box;
 
@@ -211,7 +211,6 @@ body {
     padding: 2rem;
     padding-top: 2.4rem;
     border: none;
-    border-radius: 3px;
     cursor: pointer;
     transition: 0.2s all ease-in-out;
   }
@@ -224,7 +223,7 @@ body {
     height: 25px;
 
     &:hover {
-      background-color: darken($button-color, 10);
+      background-color: darken($button-color, 9);
     }
   }
 }
