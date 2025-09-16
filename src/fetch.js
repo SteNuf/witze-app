@@ -16,7 +16,6 @@ export function saveJokeToLocalStorage(joke) {
   const jokes = getJokesFromLocalStorage();
   jokes.push(joke);
   localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(jokes));
-  //console.log(localStorage.getItem(LOCAL_STORAGE_KEY));
 }
 
 export function getJokesFromLocalStorage() {

@@ -1,30 +1,18 @@
-import {
-  getJokeAPI,
-  saveJokeToLocalStorage,
-  getJokesFromLocalStorage,
-} from "./fetch.js";
+import { getJokeAPI, getJokesFromLocalStorage } from "./fetch.js";
 import "./main.scss";
 
 let currentJoke = "";
 let saveListJokeArray = getJokesFromLocalStorage();
+let darkmode = localStorage.getItem("darkmode"); //Darkmode
 
 const newJokeButtonElement = document.querySelector(".joke__new-button");
 const saveJokeButtonElement = document.querySelector(".joke__save-button");
 const jokeSaveListElement = document.querySelector(".joke-save__list");
-
-//Versteckter Button
-const hidden = document.getElementById("hidden-button");
+const hidden = document.getElementById("hidden-button"); //Versteckter Button
 const placeHolderElement = document.getElementById(
   "joke-save__list--placeholder"
 );
-
-if (saveListJokeArray.length > 0 && placeHolderElement) {
-  placeHolderElement.remove();
-}
-
-//Darkmode
-let darkmode = localStorage.getItem("darkmode");
-const themeSwitchElement = document.getElementById("theme-switch");
+const themeSwitchElement = document.getElementById("theme-switch"); //Darkmode
 
 const enableDarkmode = () => {
   document.body.classList.add("darkmode");
@@ -35,41 +23,6 @@ const disableDarkmode = () => {
   document.body.classList.remove("darkmode");
   localStorage.setItem("darkmode", null);
 };
-
-if (darkmode === "active") enableDarkmode();
-
-themeSwitchElement.addEventListener("click", () => {
-  darkmode = localStorage.getItem("darkmode");
-  darkmode !== "active" ? enableDarkmode() : disableDarkmode();
-});
-
-//Witz laden
-newJokeButtonElement.addEventListener("click", async () => {
-  currentJoke = await getJokeAPI();
-  hidden.classList.remove("joke__save-button--hidden");
-});
-
-// Witz speichern
-saveJokeButtonElement.addEventListener("click", () => {
-  if (!currentJoke) {
-    alert("Bitte erst einen Witz laden!");
-    return;
-  }
-
-  if (saveListJokeArray.includes(currentJoke)) {
-    alert("Dieser Witz ist schon gespeichert!");
-    return;
-  }
-
-  if (placeHolderElement) {
-    placeHolderElement.remove();
-  }
-
-  saveListJokeArray.push(currentJoke);
-  localStorage.setItem("witze-app", JSON.stringify(saveListJokeArray));
-
-  renderJoke(currentJoke);
-});
 
 function renderJoke(joke) {
   const jokeListDiv = document.createElement("div");
@@ -108,6 +61,45 @@ function renderJoke(joke) {
     });
 
   jokeSaveListElement.prepend(jokeListDiv);
+}
+
+//darkmode
+themeSwitchElement.addEventListener("click", () => {
+  darkmode = localStorage.getItem("darkmode");
+  darkmode !== "active" ? enableDarkmode() : disableDarkmode();
+});
+if (darkmode === "active") enableDarkmode();
+
+//Witz laden
+newJokeButtonElement.addEventListener("click", async () => {
+  currentJoke = await getJokeAPI();
+  hidden.classList.remove("joke__save-button--hidden");
+});
+
+// Witz speichern
+saveJokeButtonElement.addEventListener("click", () => {
+  if (!currentJoke) {
+    alert("Bitte erst einen Witz laden!");
+    return;
+  }
+
+  if (saveListJokeArray.includes(currentJoke)) {
+    alert("Dieser Witz ist schon gespeichert!");
+    return;
+  }
+
+  if (placeHolderElement) {
+    placeHolderElement.remove();
+  }
+
+  saveListJokeArray.push(currentJoke);
+  localStorage.setItem("witze-app", JSON.stringify(saveListJokeArray));
+
+  renderJoke(currentJoke);
+});
+
+if (saveListJokeArray.length > 0 && placeHolderElement) {
+  placeHolderElement.remove();
 }
 
 saveListJokeArray.forEach(renderJoke);
