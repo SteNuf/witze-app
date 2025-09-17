@@ -1,4 +1,8 @@
-import { getJokeAPI, getJokesFromLocalStorage } from "./fetch.js";
+import {
+  getJokeAPI,
+  getJokesFromLocalStorage,
+  renderJokeText,
+} from "./fetch.js";
 import "./main.scss";
 
 let currentJoke = "";
@@ -72,7 +76,9 @@ if (darkmode === "active") enableDarkmode();
 
 //Witz laden
 newJokeButtonElement.addEventListener("click", async () => {
-  currentJoke = await getJokeAPI();
+  const joke = await getJokeAPI();
+  renderJokeText(joke);
+  currentJoke = joke;
   hidden.classList.remove("joke__save-button--hidden");
 });
 
@@ -98,8 +104,8 @@ saveJokeButtonElement.addEventListener("click", () => {
   renderJoke(currentJoke);
 });
 
+saveListJokeArray.forEach(renderJoke);
+
 if (saveListJokeArray.length > 0 && placeHolderElement) {
   placeHolderElement.remove();
 }
-
-saveListJokeArray.forEach(renderJoke);
