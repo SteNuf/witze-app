@@ -56,7 +56,7 @@ function renderJoke(joke) {
     .addEventListener("click", () => {
       jokeListDiv.remove();
       saveListJokeArray = saveListJokeArray.filter((j) => j !== joke);
-      //saveJokeToLocalStorage(saveListJokeArray);
+
       localStorage.setItem("witze-app", JSON.stringify(saveListJokeArray));
 
       if (saveListJokeArray.length === 0) {
@@ -84,11 +84,6 @@ newJokeButtonElement.addEventListener("click", async () => {
 
 // Witz speichern
 saveJokeButtonElement.addEventListener("click", () => {
-  if (!currentJoke) {
-    alert("Bitte erst einen Witz laden!");
-    return;
-  }
-
   if (saveListJokeArray.includes(currentJoke)) {
     alert("Dieser Witz ist schon gespeichert!");
     return;

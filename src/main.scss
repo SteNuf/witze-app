@@ -60,7 +60,6 @@ body {
 
 .joke {
   background-color: $second-bgColor;
-
   margin-top: 2rem;
   padding: 2rem;
 
@@ -164,6 +163,7 @@ body {
     @include textStyle(normal, 1.4rem);
     padding-top: 5rem;
     padding-bottom: 2rem;
+    text-align: center;
   }
   &__list {
     display: flex;

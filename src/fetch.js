@@ -19,7 +19,7 @@ export function saveJokeToLocalStorage(joke) {
 }
 
 export function getJokesFromLocalStorage() {
-  const data = localStorage.getItem("witze-app");
+  const data = localStorage.getItem(LOCAL_STORAGE_KEY);
   if (!data) {
     return [];
   }
