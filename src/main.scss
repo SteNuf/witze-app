@@ -124,6 +124,7 @@ body {
     gap: 8px;
     font-size: 1.2rem;
     background-color: $second-bgColor;
+    text-align: center;
 
     @include tablet-and-up() {
       width: 200px;
@@ -139,7 +140,7 @@ body {
       height: 24px;
 
       @include tablet-and-up() {
-        padding-top: 1px;
+        padding-top: 2px;
         width: 2vh;
         height: 2vh;
       }
